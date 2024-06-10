@@ -1,0 +1,2527 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement_list
+Rule 2     statement_list -> statement_list statement
+Rule 3     statement_list -> statement
+Rule 4     statement -> var_declaration
+Rule 5     statement -> print_statement
+Rule 6     statement -> if_statement
+Rule 7     statement -> expression_statement
+Rule 8     var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON
+Rule 9     var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON
+Rule 10    var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON
+Rule 11    var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON
+Rule 12    var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON
+Rule 13    print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON
+Rule 14    if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+Rule 15    else_statement -> SHINO LBRACE statement_list RBRACE
+Rule 16    else_statement -> empty
+Rule 17    expression_statement -> expression SEMICOLON
+Rule 18    expression -> expression SUMA expression
+Rule 19    expression -> expression RESTA expression
+Rule 20    expression -> expression MULTIPLICACION expression
+Rule 21    expression -> expression DIVISION expression
+Rule 22    expression -> expression EQEQ expression
+Rule 23    expression -> expression EQEQEQ expression
+Rule 24    expression -> expression GT expression
+Rule 25    expression -> expression LT expression
+Rule 26    expression -> expression GTE expression
+Rule 27    expression -> expression LTE expression
+Rule 28    expression -> expression AND expression
+Rule 29    expression -> expression OR expression
+Rule 30    expression -> NOT expression
+Rule 31    expression -> LPAREN expression RPAREN
+Rule 32    expression -> NUMERO
+Rule 33    expression -> CADENA
+Rule 34    expression -> BOOLEANO
+Rule 35    expression -> ID
+Rule 36    empty -> <empty>
+
+Terminals, with rules where they appear
+
+AND                  : 28
+ASIGNACION           : 8 9 10 11 12
+BOOLEANO             : 34
+CADENA               : 33
+CARACTERCITO         : 11
+DIVISION             : 21
+ENTERITO             : 9
+EQEQ                 : 22
+EQEQEQ               : 23
+FLOTANTITO           : 10
+GT                   : 24
+GTE                  : 26
+ID                   : 8 9 10 11 12 35
+IMPRIMIR             : 13
+LBRACE               : 14 15
+LOGIQUITO            : 12
+LPAREN               : 13 14 31
+LT                   : 25
+LTE                  : 27
+MULTIPLICACION       : 20
+NOT                  : 30
+NUMERO               : 32
+OR                   : 29
+RBRACE               : 14 15
+RESTA                : 19
+RPAREN               : 13 14 31
+SEMICOLON            : 8 9 10 11 12 13 17
+SHI                  : 14
+SHINO                : 15
+SUMA                 : 18
+VARIABLESITA         : 8
+error                : 
+
+Nonterminals, with rules where they appear
+
+else_statement       : 14
+empty                : 16
+expression           : 8 9 10 11 12 13 14 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 28 29 29 30 31
+expression_statement : 7
+if_statement         : 6
+print_statement      : 5
+program              : 0
+statement            : 2 3
+statement_list       : 1 2 14 15
+var_declaration      : 4
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement_list
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . var_declaration
+    (5) statement -> . print_statement
+    (6) statement -> . if_statement
+    (7) statement -> . expression_statement
+    (8) var_declaration -> . VARIABLESITA ID ASIGNACION expression SEMICOLON
+    (9) var_declaration -> . ENTERITO ID ASIGNACION expression SEMICOLON
+    (10) var_declaration -> . FLOTANTITO ID ASIGNACION expression SEMICOLON
+    (11) var_declaration -> . CARACTERCITO ID ASIGNACION expression SEMICOLON
+    (12) var_declaration -> . LOGIQUITO ID ASIGNACION expression SEMICOLON
+    (13) print_statement -> . IMPRIMIR LPAREN expression RPAREN SEMICOLON
+    (14) if_statement -> . SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+    (17) expression_statement -> . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    VARIABLESITA    shift and go to state 8
+    ENTERITO        shift and go to state 11
+    FLOTANTITO      shift and go to state 12
+    CARACTERCITO    shift and go to state 13
+    LOGIQUITO       shift and go to state 14
+    IMPRIMIR        shift and go to state 15
+    SHI             shift and go to state 17
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    program                        shift and go to state 1
+    statement_list                 shift and go to state 2
+    statement                      shift and go to state 3
+    var_declaration                shift and go to state 4
+    print_statement                shift and go to state 5
+    if_statement                   shift and go to state 6
+    expression_statement           shift and go to state 7
+    expression                     shift and go to state 10
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statement_list .
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . var_declaration
+    (5) statement -> . print_statement
+    (6) statement -> . if_statement
+    (7) statement -> . expression_statement
+    (8) var_declaration -> . VARIABLESITA ID ASIGNACION expression SEMICOLON
+    (9) var_declaration -> . ENTERITO ID ASIGNACION expression SEMICOLON
+    (10) var_declaration -> . FLOTANTITO ID ASIGNACION expression SEMICOLON
+    (11) var_declaration -> . CARACTERCITO ID ASIGNACION expression SEMICOLON
+    (12) var_declaration -> . LOGIQUITO ID ASIGNACION expression SEMICOLON
+    (13) print_statement -> . IMPRIMIR LPAREN expression RPAREN SEMICOLON
+    (14) if_statement -> . SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+    (17) expression_statement -> . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    $end            reduce using rule 1 (program -> statement_list .)
+    VARIABLESITA    shift and go to state 8
+    ENTERITO        shift and go to state 11
+    FLOTANTITO      shift and go to state 12
+    CARACTERCITO    shift and go to state 13
+    LOGIQUITO       shift and go to state 14
+    IMPRIMIR        shift and go to state 15
+    SHI             shift and go to state 17
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    statement                      shift and go to state 22
+    var_declaration                shift and go to state 4
+    print_statement                shift and go to state 5
+    if_statement                   shift and go to state 6
+    expression_statement           shift and go to state 7
+    expression                     shift and go to state 10
+
+state 3
+
+    (3) statement_list -> statement .
+
+    VARIABLESITA    reduce using rule 3 (statement_list -> statement .)
+    ENTERITO        reduce using rule 3 (statement_list -> statement .)
+    FLOTANTITO      reduce using rule 3 (statement_list -> statement .)
+    CARACTERCITO    reduce using rule 3 (statement_list -> statement .)
+    LOGIQUITO       reduce using rule 3 (statement_list -> statement .)
+    IMPRIMIR        reduce using rule 3 (statement_list -> statement .)
+    SHI             reduce using rule 3 (statement_list -> statement .)
+    NOT             reduce using rule 3 (statement_list -> statement .)
+    LPAREN          reduce using rule 3 (statement_list -> statement .)
+    NUMERO          reduce using rule 3 (statement_list -> statement .)
+    CADENA          reduce using rule 3 (statement_list -> statement .)
+    BOOLEANO        reduce using rule 3 (statement_list -> statement .)
+    ID              reduce using rule 3 (statement_list -> statement .)
+    $end            reduce using rule 3 (statement_list -> statement .)
+    RBRACE          reduce using rule 3 (statement_list -> statement .)
+
+
+state 4
+
+    (4) statement -> var_declaration .
+
+    VARIABLESITA    reduce using rule 4 (statement -> var_declaration .)
+    ENTERITO        reduce using rule 4 (statement -> var_declaration .)
+    FLOTANTITO      reduce using rule 4 (statement -> var_declaration .)
+    CARACTERCITO    reduce using rule 4 (statement -> var_declaration .)
+    LOGIQUITO       reduce using rule 4 (statement -> var_declaration .)
+    IMPRIMIR        reduce using rule 4 (statement -> var_declaration .)
+    SHI             reduce using rule 4 (statement -> var_declaration .)
+    NOT             reduce using rule 4 (statement -> var_declaration .)
+    LPAREN          reduce using rule 4 (statement -> var_declaration .)
+    NUMERO          reduce using rule 4 (statement -> var_declaration .)
+    CADENA          reduce using rule 4 (statement -> var_declaration .)
+    BOOLEANO        reduce using rule 4 (statement -> var_declaration .)
+    ID              reduce using rule 4 (statement -> var_declaration .)
+    $end            reduce using rule 4 (statement -> var_declaration .)
+    RBRACE          reduce using rule 4 (statement -> var_declaration .)
+
+
+state 5
+
+    (5) statement -> print_statement .
+
+    VARIABLESITA    reduce using rule 5 (statement -> print_statement .)
+    ENTERITO        reduce using rule 5 (statement -> print_statement .)
+    FLOTANTITO      reduce using rule 5 (statement -> print_statement .)
+    CARACTERCITO    reduce using rule 5 (statement -> print_statement .)
+    LOGIQUITO       reduce using rule 5 (statement -> print_statement .)
+    IMPRIMIR        reduce using rule 5 (statement -> print_statement .)
+    SHI             reduce using rule 5 (statement -> print_statement .)
+    NOT             reduce using rule 5 (statement -> print_statement .)
+    LPAREN          reduce using rule 5 (statement -> print_statement .)
+    NUMERO          reduce using rule 5 (statement -> print_statement .)
+    CADENA          reduce using rule 5 (statement -> print_statement .)
+    BOOLEANO        reduce using rule 5 (statement -> print_statement .)
+    ID              reduce using rule 5 (statement -> print_statement .)
+    $end            reduce using rule 5 (statement -> print_statement .)
+    RBRACE          reduce using rule 5 (statement -> print_statement .)
+
+
+state 6
+
+    (6) statement -> if_statement .
+
+    VARIABLESITA    reduce using rule 6 (statement -> if_statement .)
+    ENTERITO        reduce using rule 6 (statement -> if_statement .)
+    FLOTANTITO      reduce using rule 6 (statement -> if_statement .)
+    CARACTERCITO    reduce using rule 6 (statement -> if_statement .)
+    LOGIQUITO       reduce using rule 6 (statement -> if_statement .)
+    IMPRIMIR        reduce using rule 6 (statement -> if_statement .)
+    SHI             reduce using rule 6 (statement -> if_statement .)
+    NOT             reduce using rule 6 (statement -> if_statement .)
+    LPAREN          reduce using rule 6 (statement -> if_statement .)
+    NUMERO          reduce using rule 6 (statement -> if_statement .)
+    CADENA          reduce using rule 6 (statement -> if_statement .)
+    BOOLEANO        reduce using rule 6 (statement -> if_statement .)
+    ID              reduce using rule 6 (statement -> if_statement .)
+    $end            reduce using rule 6 (statement -> if_statement .)
+    RBRACE          reduce using rule 6 (statement -> if_statement .)
+
+
+state 7
+
+    (7) statement -> expression_statement .
+
+    VARIABLESITA    reduce using rule 7 (statement -> expression_statement .)
+    ENTERITO        reduce using rule 7 (statement -> expression_statement .)
+    FLOTANTITO      reduce using rule 7 (statement -> expression_statement .)
+    CARACTERCITO    reduce using rule 7 (statement -> expression_statement .)
+    LOGIQUITO       reduce using rule 7 (statement -> expression_statement .)
+    IMPRIMIR        reduce using rule 7 (statement -> expression_statement .)
+    SHI             reduce using rule 7 (statement -> expression_statement .)
+    NOT             reduce using rule 7 (statement -> expression_statement .)
+    LPAREN          reduce using rule 7 (statement -> expression_statement .)
+    NUMERO          reduce using rule 7 (statement -> expression_statement .)
+    CADENA          reduce using rule 7 (statement -> expression_statement .)
+    BOOLEANO        reduce using rule 7 (statement -> expression_statement .)
+    ID              reduce using rule 7 (statement -> expression_statement .)
+    $end            reduce using rule 7 (statement -> expression_statement .)
+    RBRACE          reduce using rule 7 (statement -> expression_statement .)
+
+
+state 8
+
+    (8) var_declaration -> VARIABLESITA . ID ASIGNACION expression SEMICOLON
+
+    ID              shift and go to state 23
+
+
+state 9
+
+    (35) expression -> ID .
+
+    SEMICOLON       reduce using rule 35 (expression -> ID .)
+    SUMA            reduce using rule 35 (expression -> ID .)
+    RESTA           reduce using rule 35 (expression -> ID .)
+    MULTIPLICACION  reduce using rule 35 (expression -> ID .)
+    DIVISION        reduce using rule 35 (expression -> ID .)
+    EQEQ            reduce using rule 35 (expression -> ID .)
+    EQEQEQ          reduce using rule 35 (expression -> ID .)
+    GT              reduce using rule 35 (expression -> ID .)
+    LT              reduce using rule 35 (expression -> ID .)
+    GTE             reduce using rule 35 (expression -> ID .)
+    LTE             reduce using rule 35 (expression -> ID .)
+    AND             reduce using rule 35 (expression -> ID .)
+    OR              reduce using rule 35 (expression -> ID .)
+    RPAREN          reduce using rule 35 (expression -> ID .)
+
+
+state 10
+
+    (17) expression_statement -> expression . SEMICOLON
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       shift and go to state 24
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 11
+
+    (9) var_declaration -> ENTERITO . ID ASIGNACION expression SEMICOLON
+
+    ID              shift and go to state 37
+
+
+state 12
+
+    (10) var_declaration -> FLOTANTITO . ID ASIGNACION expression SEMICOLON
+
+    ID              shift and go to state 38
+
+
+state 13
+
+    (11) var_declaration -> CARACTERCITO . ID ASIGNACION expression SEMICOLON
+
+    ID              shift and go to state 39
+
+
+state 14
+
+    (12) var_declaration -> LOGIQUITO . ID ASIGNACION expression SEMICOLON
+
+    ID              shift and go to state 40
+
+
+state 15
+
+    (13) print_statement -> IMPRIMIR . LPAREN expression RPAREN SEMICOLON
+
+    LPAREN          shift and go to state 41
+
+
+state 16
+
+    (31) expression -> LPAREN . expression RPAREN
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 42
+
+state 17
+
+    (14) if_statement -> SHI . LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+
+    LPAREN          shift and go to state 43
+
+
+state 18
+
+    (30) expression -> NOT . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 44
+
+state 19
+
+    (32) expression -> NUMERO .
+
+    SEMICOLON       reduce using rule 32 (expression -> NUMERO .)
+    SUMA            reduce using rule 32 (expression -> NUMERO .)
+    RESTA           reduce using rule 32 (expression -> NUMERO .)
+    MULTIPLICACION  reduce using rule 32 (expression -> NUMERO .)
+    DIVISION        reduce using rule 32 (expression -> NUMERO .)
+    EQEQ            reduce using rule 32 (expression -> NUMERO .)
+    EQEQEQ          reduce using rule 32 (expression -> NUMERO .)
+    GT              reduce using rule 32 (expression -> NUMERO .)
+    LT              reduce using rule 32 (expression -> NUMERO .)
+    GTE             reduce using rule 32 (expression -> NUMERO .)
+    LTE             reduce using rule 32 (expression -> NUMERO .)
+    AND             reduce using rule 32 (expression -> NUMERO .)
+    OR              reduce using rule 32 (expression -> NUMERO .)
+    RPAREN          reduce using rule 32 (expression -> NUMERO .)
+
+
+state 20
+
+    (33) expression -> CADENA .
+
+    SEMICOLON       reduce using rule 33 (expression -> CADENA .)
+    SUMA            reduce using rule 33 (expression -> CADENA .)
+    RESTA           reduce using rule 33 (expression -> CADENA .)
+    MULTIPLICACION  reduce using rule 33 (expression -> CADENA .)
+    DIVISION        reduce using rule 33 (expression -> CADENA .)
+    EQEQ            reduce using rule 33 (expression -> CADENA .)
+    EQEQEQ          reduce using rule 33 (expression -> CADENA .)
+    GT              reduce using rule 33 (expression -> CADENA .)
+    LT              reduce using rule 33 (expression -> CADENA .)
+    GTE             reduce using rule 33 (expression -> CADENA .)
+    LTE             reduce using rule 33 (expression -> CADENA .)
+    AND             reduce using rule 33 (expression -> CADENA .)
+    OR              reduce using rule 33 (expression -> CADENA .)
+    RPAREN          reduce using rule 33 (expression -> CADENA .)
+
+
+state 21
+
+    (34) expression -> BOOLEANO .
+
+    SEMICOLON       reduce using rule 34 (expression -> BOOLEANO .)
+    SUMA            reduce using rule 34 (expression -> BOOLEANO .)
+    RESTA           reduce using rule 34 (expression -> BOOLEANO .)
+    MULTIPLICACION  reduce using rule 34 (expression -> BOOLEANO .)
+    DIVISION        reduce using rule 34 (expression -> BOOLEANO .)
+    EQEQ            reduce using rule 34 (expression -> BOOLEANO .)
+    EQEQEQ          reduce using rule 34 (expression -> BOOLEANO .)
+    GT              reduce using rule 34 (expression -> BOOLEANO .)
+    LT              reduce using rule 34 (expression -> BOOLEANO .)
+    GTE             reduce using rule 34 (expression -> BOOLEANO .)
+    LTE             reduce using rule 34 (expression -> BOOLEANO .)
+    AND             reduce using rule 34 (expression -> BOOLEANO .)
+    OR              reduce using rule 34 (expression -> BOOLEANO .)
+    RPAREN          reduce using rule 34 (expression -> BOOLEANO .)
+
+
+state 22
+
+    (2) statement_list -> statement_list statement .
+
+    VARIABLESITA    reduce using rule 2 (statement_list -> statement_list statement .)
+    ENTERITO        reduce using rule 2 (statement_list -> statement_list statement .)
+    FLOTANTITO      reduce using rule 2 (statement_list -> statement_list statement .)
+    CARACTERCITO    reduce using rule 2 (statement_list -> statement_list statement .)
+    LOGIQUITO       reduce using rule 2 (statement_list -> statement_list statement .)
+    IMPRIMIR        reduce using rule 2 (statement_list -> statement_list statement .)
+    SHI             reduce using rule 2 (statement_list -> statement_list statement .)
+    NOT             reduce using rule 2 (statement_list -> statement_list statement .)
+    LPAREN          reduce using rule 2 (statement_list -> statement_list statement .)
+    NUMERO          reduce using rule 2 (statement_list -> statement_list statement .)
+    CADENA          reduce using rule 2 (statement_list -> statement_list statement .)
+    BOOLEANO        reduce using rule 2 (statement_list -> statement_list statement .)
+    ID              reduce using rule 2 (statement_list -> statement_list statement .)
+    $end            reduce using rule 2 (statement_list -> statement_list statement .)
+    RBRACE          reduce using rule 2 (statement_list -> statement_list statement .)
+
+
+state 23
+
+    (8) var_declaration -> VARIABLESITA ID . ASIGNACION expression SEMICOLON
+
+    ASIGNACION      shift and go to state 45
+
+
+state 24
+
+    (17) expression_statement -> expression SEMICOLON .
+
+    VARIABLESITA    reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    ENTERITO        reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    FLOTANTITO      reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    CARACTERCITO    reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    LOGIQUITO       reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    IMPRIMIR        reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    SHI             reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    NOT             reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    LPAREN          reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    NUMERO          reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    CADENA          reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    BOOLEANO        reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    ID              reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    $end            reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+    RBRACE          reduce using rule 17 (expression_statement -> expression SEMICOLON .)
+
+
+state 25
+
+    (18) expression -> expression SUMA . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 46
+
+state 26
+
+    (19) expression -> expression RESTA . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 47
+
+state 27
+
+    (20) expression -> expression MULTIPLICACION . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 48
+
+state 28
+
+    (21) expression -> expression DIVISION . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 49
+
+state 29
+
+    (22) expression -> expression EQEQ . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 50
+
+state 30
+
+    (23) expression -> expression EQEQEQ . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 51
+
+state 31
+
+    (24) expression -> expression GT . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 52
+
+state 32
+
+    (25) expression -> expression LT . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 53
+
+state 33
+
+    (26) expression -> expression GTE . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 54
+
+state 34
+
+    (27) expression -> expression LTE . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 55
+
+state 35
+
+    (28) expression -> expression AND . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 56
+
+state 36
+
+    (29) expression -> expression OR . expression
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 57
+
+state 37
+
+    (9) var_declaration -> ENTERITO ID . ASIGNACION expression SEMICOLON
+
+    ASIGNACION      shift and go to state 58
+
+
+state 38
+
+    (10) var_declaration -> FLOTANTITO ID . ASIGNACION expression SEMICOLON
+
+    ASIGNACION      shift and go to state 59
+
+
+state 39
+
+    (11) var_declaration -> CARACTERCITO ID . ASIGNACION expression SEMICOLON
+
+    ASIGNACION      shift and go to state 60
+
+
+state 40
+
+    (12) var_declaration -> LOGIQUITO ID . ASIGNACION expression SEMICOLON
+
+    ASIGNACION      shift and go to state 61
+
+
+state 41
+
+    (13) print_statement -> IMPRIMIR LPAREN . expression RPAREN SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 62
+
+state 42
+
+    (31) expression -> LPAREN expression . RPAREN
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    RPAREN          shift and go to state 63
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 43
+
+    (14) if_statement -> SHI LPAREN . expression RPAREN LBRACE statement_list RBRACE else_statement
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 64
+
+state 44
+
+    (30) expression -> NOT expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 30 (expression -> NOT expression .)
+    SUMA            reduce using rule 30 (expression -> NOT expression .)
+    RESTA           reduce using rule 30 (expression -> NOT expression .)
+    MULTIPLICACION  reduce using rule 30 (expression -> NOT expression .)
+    DIVISION        reduce using rule 30 (expression -> NOT expression .)
+    EQEQ            reduce using rule 30 (expression -> NOT expression .)
+    EQEQEQ          reduce using rule 30 (expression -> NOT expression .)
+    GT              reduce using rule 30 (expression -> NOT expression .)
+    LT              reduce using rule 30 (expression -> NOT expression .)
+    GTE             reduce using rule 30 (expression -> NOT expression .)
+    LTE             reduce using rule 30 (expression -> NOT expression .)
+    AND             reduce using rule 30 (expression -> NOT expression .)
+    OR              reduce using rule 30 (expression -> NOT expression .)
+    RPAREN          reduce using rule 30 (expression -> NOT expression .)
+
+  ! SUMA            [ shift and go to state 25 ]
+  ! RESTA           [ shift and go to state 26 ]
+  ! MULTIPLICACION  [ shift and go to state 27 ]
+  ! DIVISION        [ shift and go to state 28 ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 45
+
+    (8) var_declaration -> VARIABLESITA ID ASIGNACION . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 65
+
+state 46
+
+    (18) expression -> expression SUMA expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 18 (expression -> expression SUMA expression .)
+    SUMA            reduce using rule 18 (expression -> expression SUMA expression .)
+    RESTA           reduce using rule 18 (expression -> expression SUMA expression .)
+    EQEQ            reduce using rule 18 (expression -> expression SUMA expression .)
+    EQEQEQ          reduce using rule 18 (expression -> expression SUMA expression .)
+    GT              reduce using rule 18 (expression -> expression SUMA expression .)
+    LT              reduce using rule 18 (expression -> expression SUMA expression .)
+    GTE             reduce using rule 18 (expression -> expression SUMA expression .)
+    LTE             reduce using rule 18 (expression -> expression SUMA expression .)
+    AND             reduce using rule 18 (expression -> expression SUMA expression .)
+    OR              reduce using rule 18 (expression -> expression SUMA expression .)
+    RPAREN          reduce using rule 18 (expression -> expression SUMA expression .)
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+
+  ! MULTIPLICACION  [ reduce using rule 18 (expression -> expression SUMA expression .) ]
+  ! DIVISION        [ reduce using rule 18 (expression -> expression SUMA expression .) ]
+  ! SUMA            [ shift and go to state 25 ]
+  ! RESTA           [ shift and go to state 26 ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 47
+
+    (19) expression -> expression RESTA expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 19 (expression -> expression RESTA expression .)
+    SUMA            reduce using rule 19 (expression -> expression RESTA expression .)
+    RESTA           reduce using rule 19 (expression -> expression RESTA expression .)
+    EQEQ            reduce using rule 19 (expression -> expression RESTA expression .)
+    EQEQEQ          reduce using rule 19 (expression -> expression RESTA expression .)
+    GT              reduce using rule 19 (expression -> expression RESTA expression .)
+    LT              reduce using rule 19 (expression -> expression RESTA expression .)
+    GTE             reduce using rule 19 (expression -> expression RESTA expression .)
+    LTE             reduce using rule 19 (expression -> expression RESTA expression .)
+    AND             reduce using rule 19 (expression -> expression RESTA expression .)
+    OR              reduce using rule 19 (expression -> expression RESTA expression .)
+    RPAREN          reduce using rule 19 (expression -> expression RESTA expression .)
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+
+  ! MULTIPLICACION  [ reduce using rule 19 (expression -> expression RESTA expression .) ]
+  ! DIVISION        [ reduce using rule 19 (expression -> expression RESTA expression .) ]
+  ! SUMA            [ shift and go to state 25 ]
+  ! RESTA           [ shift and go to state 26 ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 48
+
+    (20) expression -> expression MULTIPLICACION expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    SUMA            reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    RESTA           reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    MULTIPLICACION  reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    DIVISION        reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    EQEQ            reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    EQEQEQ          reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    GT              reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    LT              reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    GTE             reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    LTE             reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    AND             reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    OR              reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+    RPAREN          reduce using rule 20 (expression -> expression MULTIPLICACION expression .)
+
+  ! SUMA            [ shift and go to state 25 ]
+  ! RESTA           [ shift and go to state 26 ]
+  ! MULTIPLICACION  [ shift and go to state 27 ]
+  ! DIVISION        [ shift and go to state 28 ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 49
+
+    (21) expression -> expression DIVISION expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 21 (expression -> expression DIVISION expression .)
+    SUMA            reduce using rule 21 (expression -> expression DIVISION expression .)
+    RESTA           reduce using rule 21 (expression -> expression DIVISION expression .)
+    MULTIPLICACION  reduce using rule 21 (expression -> expression DIVISION expression .)
+    DIVISION        reduce using rule 21 (expression -> expression DIVISION expression .)
+    EQEQ            reduce using rule 21 (expression -> expression DIVISION expression .)
+    EQEQEQ          reduce using rule 21 (expression -> expression DIVISION expression .)
+    GT              reduce using rule 21 (expression -> expression DIVISION expression .)
+    LT              reduce using rule 21 (expression -> expression DIVISION expression .)
+    GTE             reduce using rule 21 (expression -> expression DIVISION expression .)
+    LTE             reduce using rule 21 (expression -> expression DIVISION expression .)
+    AND             reduce using rule 21 (expression -> expression DIVISION expression .)
+    OR              reduce using rule 21 (expression -> expression DIVISION expression .)
+    RPAREN          reduce using rule 21 (expression -> expression DIVISION expression .)
+
+  ! SUMA            [ shift and go to state 25 ]
+  ! RESTA           [ shift and go to state 26 ]
+  ! MULTIPLICACION  [ shift and go to state 27 ]
+  ! DIVISION        [ shift and go to state 28 ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 50
+
+    (22) expression -> expression EQEQ expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 22 (expression -> expression EQEQ expression .)
+    EQEQ            reduce using rule 22 (expression -> expression EQEQ expression .)
+    EQEQEQ          reduce using rule 22 (expression -> expression EQEQ expression .)
+    AND             reduce using rule 22 (expression -> expression EQEQ expression .)
+    OR              reduce using rule 22 (expression -> expression EQEQ expression .)
+    RPAREN          reduce using rule 22 (expression -> expression EQEQ expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+
+  ! SUMA            [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! RESTA           [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! DIVISION        [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! GT              [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! LT              [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! GTE             [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! LTE             [ reduce using rule 22 (expression -> expression EQEQ expression .) ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 51
+
+    (23) expression -> expression EQEQEQ expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 23 (expression -> expression EQEQEQ expression .)
+    EQEQ            reduce using rule 23 (expression -> expression EQEQEQ expression .)
+    EQEQEQ          reduce using rule 23 (expression -> expression EQEQEQ expression .)
+    AND             reduce using rule 23 (expression -> expression EQEQEQ expression .)
+    OR              reduce using rule 23 (expression -> expression EQEQEQ expression .)
+    RPAREN          reduce using rule 23 (expression -> expression EQEQEQ expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+
+  ! SUMA            [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! RESTA           [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! DIVISION        [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! GT              [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! LT              [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! GTE             [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! LTE             [ reduce using rule 23 (expression -> expression EQEQEQ expression .) ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 52
+
+    (24) expression -> expression GT expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 24 (expression -> expression GT expression .)
+    EQEQ            reduce using rule 24 (expression -> expression GT expression .)
+    EQEQEQ          reduce using rule 24 (expression -> expression GT expression .)
+    GT              reduce using rule 24 (expression -> expression GT expression .)
+    LT              reduce using rule 24 (expression -> expression GT expression .)
+    GTE             reduce using rule 24 (expression -> expression GT expression .)
+    LTE             reduce using rule 24 (expression -> expression GT expression .)
+    AND             reduce using rule 24 (expression -> expression GT expression .)
+    OR              reduce using rule 24 (expression -> expression GT expression .)
+    RPAREN          reduce using rule 24 (expression -> expression GT expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+
+  ! SUMA            [ reduce using rule 24 (expression -> expression GT expression .) ]
+  ! RESTA           [ reduce using rule 24 (expression -> expression GT expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 24 (expression -> expression GT expression .) ]
+  ! DIVISION        [ reduce using rule 24 (expression -> expression GT expression .) ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 53
+
+    (25) expression -> expression LT expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 25 (expression -> expression LT expression .)
+    EQEQ            reduce using rule 25 (expression -> expression LT expression .)
+    EQEQEQ          reduce using rule 25 (expression -> expression LT expression .)
+    GT              reduce using rule 25 (expression -> expression LT expression .)
+    LT              reduce using rule 25 (expression -> expression LT expression .)
+    GTE             reduce using rule 25 (expression -> expression LT expression .)
+    LTE             reduce using rule 25 (expression -> expression LT expression .)
+    AND             reduce using rule 25 (expression -> expression LT expression .)
+    OR              reduce using rule 25 (expression -> expression LT expression .)
+    RPAREN          reduce using rule 25 (expression -> expression LT expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+
+  ! SUMA            [ reduce using rule 25 (expression -> expression LT expression .) ]
+  ! RESTA           [ reduce using rule 25 (expression -> expression LT expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 25 (expression -> expression LT expression .) ]
+  ! DIVISION        [ reduce using rule 25 (expression -> expression LT expression .) ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 54
+
+    (26) expression -> expression GTE expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 26 (expression -> expression GTE expression .)
+    EQEQ            reduce using rule 26 (expression -> expression GTE expression .)
+    EQEQEQ          reduce using rule 26 (expression -> expression GTE expression .)
+    GT              reduce using rule 26 (expression -> expression GTE expression .)
+    LT              reduce using rule 26 (expression -> expression GTE expression .)
+    GTE             reduce using rule 26 (expression -> expression GTE expression .)
+    LTE             reduce using rule 26 (expression -> expression GTE expression .)
+    AND             reduce using rule 26 (expression -> expression GTE expression .)
+    OR              reduce using rule 26 (expression -> expression GTE expression .)
+    RPAREN          reduce using rule 26 (expression -> expression GTE expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+
+  ! SUMA            [ reduce using rule 26 (expression -> expression GTE expression .) ]
+  ! RESTA           [ reduce using rule 26 (expression -> expression GTE expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 26 (expression -> expression GTE expression .) ]
+  ! DIVISION        [ reduce using rule 26 (expression -> expression GTE expression .) ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 55
+
+    (27) expression -> expression LTE expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 27 (expression -> expression LTE expression .)
+    EQEQ            reduce using rule 27 (expression -> expression LTE expression .)
+    EQEQEQ          reduce using rule 27 (expression -> expression LTE expression .)
+    GT              reduce using rule 27 (expression -> expression LTE expression .)
+    LT              reduce using rule 27 (expression -> expression LTE expression .)
+    GTE             reduce using rule 27 (expression -> expression LTE expression .)
+    LTE             reduce using rule 27 (expression -> expression LTE expression .)
+    AND             reduce using rule 27 (expression -> expression LTE expression .)
+    OR              reduce using rule 27 (expression -> expression LTE expression .)
+    RPAREN          reduce using rule 27 (expression -> expression LTE expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+
+  ! SUMA            [ reduce using rule 27 (expression -> expression LTE expression .) ]
+  ! RESTA           [ reduce using rule 27 (expression -> expression LTE expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 27 (expression -> expression LTE expression .) ]
+  ! DIVISION        [ reduce using rule 27 (expression -> expression LTE expression .) ]
+  ! EQEQ            [ shift and go to state 29 ]
+  ! EQEQEQ          [ shift and go to state 30 ]
+  ! GT              [ shift and go to state 31 ]
+  ! LT              [ shift and go to state 32 ]
+  ! GTE             [ shift and go to state 33 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 56
+
+    (28) expression -> expression AND expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 28 (expression -> expression AND expression .)
+    AND             reduce using rule 28 (expression -> expression AND expression .)
+    OR              reduce using rule 28 (expression -> expression AND expression .)
+    RPAREN          reduce using rule 28 (expression -> expression AND expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+
+  ! SUMA            [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! RESTA           [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! DIVISION        [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! EQEQ            [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! EQEQEQ          [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! GT              [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! LT              [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! GTE             [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! LTE             [ reduce using rule 28 (expression -> expression AND expression .) ]
+  ! AND             [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 57
+
+    (29) expression -> expression OR expression .
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       reduce using rule 29 (expression -> expression OR expression .)
+    OR              reduce using rule 29 (expression -> expression OR expression .)
+    RPAREN          reduce using rule 29 (expression -> expression OR expression .)
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+
+  ! SUMA            [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! RESTA           [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! MULTIPLICACION  [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! DIVISION        [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! EQEQ            [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! EQEQEQ          [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! GT              [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! LT              [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! GTE             [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! LTE             [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! AND             [ reduce using rule 29 (expression -> expression OR expression .) ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 58
+
+    (9) var_declaration -> ENTERITO ID ASIGNACION . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 66
+
+state 59
+
+    (10) var_declaration -> FLOTANTITO ID ASIGNACION . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 67
+
+state 60
+
+    (11) var_declaration -> CARACTERCITO ID ASIGNACION . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 68
+
+state 61
+
+    (12) var_declaration -> LOGIQUITO ID ASIGNACION . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 69
+
+state 62
+
+    (13) print_statement -> IMPRIMIR LPAREN expression . RPAREN SEMICOLON
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    RPAREN          shift and go to state 70
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 63
+
+    (31) expression -> LPAREN expression RPAREN .
+
+    SEMICOLON       reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    SUMA            reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    RESTA           reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    MULTIPLICACION  reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    DIVISION        reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    EQEQ            reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    EQEQEQ          reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    GT              reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    LT              reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    GTE             reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    LTE             reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    OR              reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 31 (expression -> LPAREN expression RPAREN .)
+
+
+state 64
+
+    (14) if_statement -> SHI LPAREN expression . RPAREN LBRACE statement_list RBRACE else_statement
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    RPAREN          shift and go to state 71
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 65
+
+    (8) var_declaration -> VARIABLESITA ID ASIGNACION expression . SEMICOLON
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       shift and go to state 72
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 66
+
+    (9) var_declaration -> ENTERITO ID ASIGNACION expression . SEMICOLON
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       shift and go to state 73
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 67
+
+    (10) var_declaration -> FLOTANTITO ID ASIGNACION expression . SEMICOLON
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       shift and go to state 74
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 68
+
+    (11) var_declaration -> CARACTERCITO ID ASIGNACION expression . SEMICOLON
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       shift and go to state 75
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 69
+
+    (12) var_declaration -> LOGIQUITO ID ASIGNACION expression . SEMICOLON
+    (18) expression -> expression . SUMA expression
+    (19) expression -> expression . RESTA expression
+    (20) expression -> expression . MULTIPLICACION expression
+    (21) expression -> expression . DIVISION expression
+    (22) expression -> expression . EQEQ expression
+    (23) expression -> expression . EQEQEQ expression
+    (24) expression -> expression . GT expression
+    (25) expression -> expression . LT expression
+    (26) expression -> expression . GTE expression
+    (27) expression -> expression . LTE expression
+    (28) expression -> expression . AND expression
+    (29) expression -> expression . OR expression
+
+    SEMICOLON       shift and go to state 76
+    SUMA            shift and go to state 25
+    RESTA           shift and go to state 26
+    MULTIPLICACION  shift and go to state 27
+    DIVISION        shift and go to state 28
+    EQEQ            shift and go to state 29
+    EQEQEQ          shift and go to state 30
+    GT              shift and go to state 31
+    LT              shift and go to state 32
+    GTE             shift and go to state 33
+    LTE             shift and go to state 34
+    AND             shift and go to state 35
+    OR              shift and go to state 36
+
+
+state 70
+
+    (13) print_statement -> IMPRIMIR LPAREN expression RPAREN . SEMICOLON
+
+    SEMICOLON       shift and go to state 77
+
+
+state 71
+
+    (14) if_statement -> SHI LPAREN expression RPAREN . LBRACE statement_list RBRACE else_statement
+
+    LBRACE          shift and go to state 78
+
+
+state 72
+
+    (8) var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .
+
+    VARIABLESITA    reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    ENTERITO        reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    FLOTANTITO      reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    CARACTERCITO    reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    LOGIQUITO       reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    IMPRIMIR        reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    SHI             reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    NOT             reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    LPAREN          reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    NUMERO          reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    CADENA          reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    BOOLEANO        reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    ID              reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    $end            reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+    RBRACE          reduce using rule 8 (var_declaration -> VARIABLESITA ID ASIGNACION expression SEMICOLON .)
+
+
+state 73
+
+    (9) var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .
+
+    VARIABLESITA    reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    ENTERITO        reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    FLOTANTITO      reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    CARACTERCITO    reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    LOGIQUITO       reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    IMPRIMIR        reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    SHI             reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    NOT             reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    LPAREN          reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    NUMERO          reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    CADENA          reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    BOOLEANO        reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    ID              reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    $end            reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+    RBRACE          reduce using rule 9 (var_declaration -> ENTERITO ID ASIGNACION expression SEMICOLON .)
+
+
+state 74
+
+    (10) var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .
+
+    VARIABLESITA    reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    ENTERITO        reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    FLOTANTITO      reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    CARACTERCITO    reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    LOGIQUITO       reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    IMPRIMIR        reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    SHI             reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    NOT             reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    LPAREN          reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    NUMERO          reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    CADENA          reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    BOOLEANO        reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    ID              reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    $end            reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+    RBRACE          reduce using rule 10 (var_declaration -> FLOTANTITO ID ASIGNACION expression SEMICOLON .)
+
+
+state 75
+
+    (11) var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .
+
+    VARIABLESITA    reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    ENTERITO        reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    FLOTANTITO      reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    CARACTERCITO    reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    LOGIQUITO       reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    IMPRIMIR        reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    SHI             reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    NOT             reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    LPAREN          reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    NUMERO          reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    CADENA          reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    BOOLEANO        reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    ID              reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    $end            reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+    RBRACE          reduce using rule 11 (var_declaration -> CARACTERCITO ID ASIGNACION expression SEMICOLON .)
+
+
+state 76
+
+    (12) var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .
+
+    VARIABLESITA    reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    ENTERITO        reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    FLOTANTITO      reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    CARACTERCITO    reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    LOGIQUITO       reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    IMPRIMIR        reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    SHI             reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    NOT             reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    LPAREN          reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    NUMERO          reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    CADENA          reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    BOOLEANO        reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    ID              reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    $end            reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+    RBRACE          reduce using rule 12 (var_declaration -> LOGIQUITO ID ASIGNACION expression SEMICOLON .)
+
+
+state 77
+
+    (13) print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .
+
+    VARIABLESITA    reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    ENTERITO        reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    FLOTANTITO      reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    CARACTERCITO    reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    LOGIQUITO       reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    IMPRIMIR        reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    SHI             reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    NOT             reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    LPAREN          reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    NUMERO          reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    CADENA          reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    BOOLEANO        reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    ID              reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    $end            reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+    RBRACE          reduce using rule 13 (print_statement -> IMPRIMIR LPAREN expression RPAREN SEMICOLON .)
+
+
+state 78
+
+    (14) if_statement -> SHI LPAREN expression RPAREN LBRACE . statement_list RBRACE else_statement
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . var_declaration
+    (5) statement -> . print_statement
+    (6) statement -> . if_statement
+    (7) statement -> . expression_statement
+    (8) var_declaration -> . VARIABLESITA ID ASIGNACION expression SEMICOLON
+    (9) var_declaration -> . ENTERITO ID ASIGNACION expression SEMICOLON
+    (10) var_declaration -> . FLOTANTITO ID ASIGNACION expression SEMICOLON
+    (11) var_declaration -> . CARACTERCITO ID ASIGNACION expression SEMICOLON
+    (12) var_declaration -> . LOGIQUITO ID ASIGNACION expression SEMICOLON
+    (13) print_statement -> . IMPRIMIR LPAREN expression RPAREN SEMICOLON
+    (14) if_statement -> . SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+    (17) expression_statement -> . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    VARIABLESITA    shift and go to state 8
+    ENTERITO        shift and go to state 11
+    FLOTANTITO      shift and go to state 12
+    CARACTERCITO    shift and go to state 13
+    LOGIQUITO       shift and go to state 14
+    IMPRIMIR        shift and go to state 15
+    SHI             shift and go to state 17
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 10
+    statement_list                 shift and go to state 79
+    statement                      shift and go to state 3
+    var_declaration                shift and go to state 4
+    print_statement                shift and go to state 5
+    if_statement                   shift and go to state 6
+    expression_statement           shift and go to state 7
+
+state 79
+
+    (14) if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list . RBRACE else_statement
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . var_declaration
+    (5) statement -> . print_statement
+    (6) statement -> . if_statement
+    (7) statement -> . expression_statement
+    (8) var_declaration -> . VARIABLESITA ID ASIGNACION expression SEMICOLON
+    (9) var_declaration -> . ENTERITO ID ASIGNACION expression SEMICOLON
+    (10) var_declaration -> . FLOTANTITO ID ASIGNACION expression SEMICOLON
+    (11) var_declaration -> . CARACTERCITO ID ASIGNACION expression SEMICOLON
+    (12) var_declaration -> . LOGIQUITO ID ASIGNACION expression SEMICOLON
+    (13) print_statement -> . IMPRIMIR LPAREN expression RPAREN SEMICOLON
+    (14) if_statement -> . SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+    (17) expression_statement -> . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    RBRACE          shift and go to state 80
+    VARIABLESITA    shift and go to state 8
+    ENTERITO        shift and go to state 11
+    FLOTANTITO      shift and go to state 12
+    CARACTERCITO    shift and go to state 13
+    LOGIQUITO       shift and go to state 14
+    IMPRIMIR        shift and go to state 15
+    SHI             shift and go to state 17
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    expression                     shift and go to state 10
+    statement                      shift and go to state 22
+    var_declaration                shift and go to state 4
+    print_statement                shift and go to state 5
+    if_statement                   shift and go to state 6
+    expression_statement           shift and go to state 7
+
+state 80
+
+    (14) if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE . else_statement
+    (15) else_statement -> . SHINO LBRACE statement_list RBRACE
+    (16) else_statement -> . empty
+    (36) empty -> .
+
+    SHINO           shift and go to state 82
+    VARIABLESITA    reduce using rule 36 (empty -> .)
+    ENTERITO        reduce using rule 36 (empty -> .)
+    FLOTANTITO      reduce using rule 36 (empty -> .)
+    CARACTERCITO    reduce using rule 36 (empty -> .)
+    LOGIQUITO       reduce using rule 36 (empty -> .)
+    IMPRIMIR        reduce using rule 36 (empty -> .)
+    SHI             reduce using rule 36 (empty -> .)
+    NOT             reduce using rule 36 (empty -> .)
+    LPAREN          reduce using rule 36 (empty -> .)
+    NUMERO          reduce using rule 36 (empty -> .)
+    CADENA          reduce using rule 36 (empty -> .)
+    BOOLEANO        reduce using rule 36 (empty -> .)
+    ID              reduce using rule 36 (empty -> .)
+    $end            reduce using rule 36 (empty -> .)
+    RBRACE          reduce using rule 36 (empty -> .)
+
+    else_statement                 shift and go to state 81
+    empty                          shift and go to state 83
+
+state 81
+
+    (14) if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .
+
+    VARIABLESITA    reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    ENTERITO        reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    FLOTANTITO      reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    CARACTERCITO    reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    LOGIQUITO       reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    IMPRIMIR        reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    SHI             reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    NOT             reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    LPAREN          reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    NUMERO          reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    CADENA          reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    BOOLEANO        reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    ID              reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    $end            reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+    RBRACE          reduce using rule 14 (if_statement -> SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement .)
+
+
+state 82
+
+    (15) else_statement -> SHINO . LBRACE statement_list RBRACE
+
+    LBRACE          shift and go to state 84
+
+
+state 83
+
+    (16) else_statement -> empty .
+
+    VARIABLESITA    reduce using rule 16 (else_statement -> empty .)
+    ENTERITO        reduce using rule 16 (else_statement -> empty .)
+    FLOTANTITO      reduce using rule 16 (else_statement -> empty .)
+    CARACTERCITO    reduce using rule 16 (else_statement -> empty .)
+    LOGIQUITO       reduce using rule 16 (else_statement -> empty .)
+    IMPRIMIR        reduce using rule 16 (else_statement -> empty .)
+    SHI             reduce using rule 16 (else_statement -> empty .)
+    NOT             reduce using rule 16 (else_statement -> empty .)
+    LPAREN          reduce using rule 16 (else_statement -> empty .)
+    NUMERO          reduce using rule 16 (else_statement -> empty .)
+    CADENA          reduce using rule 16 (else_statement -> empty .)
+    BOOLEANO        reduce using rule 16 (else_statement -> empty .)
+    ID              reduce using rule 16 (else_statement -> empty .)
+    $end            reduce using rule 16 (else_statement -> empty .)
+    RBRACE          reduce using rule 16 (else_statement -> empty .)
+
+
+state 84
+
+    (15) else_statement -> SHINO LBRACE . statement_list RBRACE
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . var_declaration
+    (5) statement -> . print_statement
+    (6) statement -> . if_statement
+    (7) statement -> . expression_statement
+    (8) var_declaration -> . VARIABLESITA ID ASIGNACION expression SEMICOLON
+    (9) var_declaration -> . ENTERITO ID ASIGNACION expression SEMICOLON
+    (10) var_declaration -> . FLOTANTITO ID ASIGNACION expression SEMICOLON
+    (11) var_declaration -> . CARACTERCITO ID ASIGNACION expression SEMICOLON
+    (12) var_declaration -> . LOGIQUITO ID ASIGNACION expression SEMICOLON
+    (13) print_statement -> . IMPRIMIR LPAREN expression RPAREN SEMICOLON
+    (14) if_statement -> . SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+    (17) expression_statement -> . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    VARIABLESITA    shift and go to state 8
+    ENTERITO        shift and go to state 11
+    FLOTANTITO      shift and go to state 12
+    CARACTERCITO    shift and go to state 13
+    LOGIQUITO       shift and go to state 14
+    IMPRIMIR        shift and go to state 15
+    SHI             shift and go to state 17
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    statement_list                 shift and go to state 85
+    statement                      shift and go to state 3
+    var_declaration                shift and go to state 4
+    print_statement                shift and go to state 5
+    if_statement                   shift and go to state 6
+    expression_statement           shift and go to state 7
+    expression                     shift and go to state 10
+
+state 85
+
+    (15) else_statement -> SHINO LBRACE statement_list . RBRACE
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . var_declaration
+    (5) statement -> . print_statement
+    (6) statement -> . if_statement
+    (7) statement -> . expression_statement
+    (8) var_declaration -> . VARIABLESITA ID ASIGNACION expression SEMICOLON
+    (9) var_declaration -> . ENTERITO ID ASIGNACION expression SEMICOLON
+    (10) var_declaration -> . FLOTANTITO ID ASIGNACION expression SEMICOLON
+    (11) var_declaration -> . CARACTERCITO ID ASIGNACION expression SEMICOLON
+    (12) var_declaration -> . LOGIQUITO ID ASIGNACION expression SEMICOLON
+    (13) print_statement -> . IMPRIMIR LPAREN expression RPAREN SEMICOLON
+    (14) if_statement -> . SHI LPAREN expression RPAREN LBRACE statement_list RBRACE else_statement
+    (17) expression_statement -> . expression SEMICOLON
+    (18) expression -> . expression SUMA expression
+    (19) expression -> . expression RESTA expression
+    (20) expression -> . expression MULTIPLICACION expression
+    (21) expression -> . expression DIVISION expression
+    (22) expression -> . expression EQEQ expression
+    (23) expression -> . expression EQEQEQ expression
+    (24) expression -> . expression GT expression
+    (25) expression -> . expression LT expression
+    (26) expression -> . expression GTE expression
+    (27) expression -> . expression LTE expression
+    (28) expression -> . expression AND expression
+    (29) expression -> . expression OR expression
+    (30) expression -> . NOT expression
+    (31) expression -> . LPAREN expression RPAREN
+    (32) expression -> . NUMERO
+    (33) expression -> . CADENA
+    (34) expression -> . BOOLEANO
+    (35) expression -> . ID
+
+    RBRACE          shift and go to state 86
+    VARIABLESITA    shift and go to state 8
+    ENTERITO        shift and go to state 11
+    FLOTANTITO      shift and go to state 12
+    CARACTERCITO    shift and go to state 13
+    LOGIQUITO       shift and go to state 14
+    IMPRIMIR        shift and go to state 15
+    SHI             shift and go to state 17
+    NOT             shift and go to state 18
+    LPAREN          shift and go to state 16
+    NUMERO          shift and go to state 19
+    CADENA          shift and go to state 20
+    BOOLEANO        shift and go to state 21
+    ID              shift and go to state 9
+
+    statement                      shift and go to state 22
+    var_declaration                shift and go to state 4
+    print_statement                shift and go to state 5
+    if_statement                   shift and go to state 6
+    expression_statement           shift and go to state 7
+    expression                     shift and go to state 10
+
+state 86
+
+    (15) else_statement -> SHINO LBRACE statement_list RBRACE .
+
+    VARIABLESITA    reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    ENTERITO        reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    FLOTANTITO      reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    CARACTERCITO    reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    LOGIQUITO       reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    IMPRIMIR        reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    SHI             reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    NOT             reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    LPAREN          reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    NUMERO          reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    CADENA          reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    BOOLEANO        reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    ID              reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    $end            reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+    RBRACE          reduce using rule 15 (else_statement -> SHINO LBRACE statement_list RBRACE .)
+

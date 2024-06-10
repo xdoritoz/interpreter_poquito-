@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpreter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contexto">
+        <h2>Poquito++</h2>
+        <h3>Palabras Claves:</h3>
+        <p>Var = "variablesita"<br>
+        If = "shi"<br>
+        Else = "shino"<br>
+        For = "parita"<br>
+        While = "vueltica"<br>
+        Print = "muestrica"<br>
+        Funciones = se declaran con la primera letra mayuscula</p>
+ 
+        <h3>Operadores:</h3>
+        <p>"+","++", "-", "*", "/", "=", "==", "===", "&gt;", "&lt;", "&gt;=" , "&lt;=" , "&&" , "||" , "!"</p>
+ 
+        <h3>Tipos de Variables:</h3>
+        <p>Int = "enterito"<br>
+        Float = "flotantito"<br>
+        String t = "caractercito"<br>
+        Boolean = "logiquito"</p>
+ 
+        <h3>Código de Prueba:</h3>
+    </div>
+ 
+    <div class="codigo">
+variablesita enterito edad = 25;
+caractercito nombre = "Juan";
+logiquito esMayorDeEdad = true;
+shi (esMayorDeEdad){
+  muestrica("Bienvenido, " + nombre);
+}shino{
+  muestrica("Lo siento, " + nombre + ", eres menor de edad.");
+}
+    </div>
+ 
+    <h1>Interpreter</h1>
+    <form action="/run" method="post">
+        <textarea name="code" rows="10" cols="50"></textarea><br>
+        <input type="submit" value="Ejecutar">
+    </form>
+    <h2>Tokens:</h2>
+    <ul>
+        {% if tokens %}
+            {% for token in tokens %}
+                <li>{{ token }}</li>
+            {% endfor %}
+        {% else %}
+            <li class="error">No se encontraron tokens.</li>
+        {% endif %}
+    </ul>
+    <h2>Resultado:</h2>
+    {% if result %}
+        <p>{{ result }}</p>
+        {% if result is string and result.startswith("Error") %}
+            <p>{{ result }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
