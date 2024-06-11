@@ -3,6 +3,7 @@ from flask_cors import CORS
 from lexer import lexer
 from my_parser import parser
 from interpreter import interpreter
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -38,4 +39,5 @@ def interpret(parse_tree):
     return interpreter.eval(parse_tree)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+
